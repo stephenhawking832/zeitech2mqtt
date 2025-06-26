@@ -1,2 +1,6 @@
 # zeitech2mqtt
-this repository is for convert zeitech to mqtt massges.
+This repository is for converting Zeitech to MQTT messages.
+This will allow Zeitech clients to use any other smart home system (e.g., Home Assistant) easily.
+
+zeitech web site: https://www.zeitech.co.il/
+
