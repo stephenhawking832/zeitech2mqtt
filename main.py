@@ -6,10 +6,17 @@ class Hosts:
         host = url
 # create Channels class to store channel info
 class Channels:
-    def __init__(self, mqtttopic, payload_off, payload_on):
+    def __init__(self, mqtttopic, state):
         self.topic = mqtttopic
-        self.on = payload_on
-        self.off = payload_off
+        self.payload = state
 
-
-
+def get_channel_info(host):
+    # get the channel info from the zeitech api
+    response = requests.get(f"http://{host}/ch.cgi")
+    if response.status_code == 200:
+        return response.text
+    else:
+        raise Exception(f"Failed to get channel info: {response.status_code}")
+def parse_zeitech_info(channel_string):    
+# parse the channel info and return a list of Channels objects
+    channel_list = channel_string.split("\n")
