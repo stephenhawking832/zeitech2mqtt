@@ -17,6 +17,14 @@ def get_channel_info(host):
         return response.text
     else:
         raise Exception(f"Failed to get channel info: {response.status_code}")
+
 def parse_zeitech_info(channel_string):    
 # parse the channel info and return a list of Channels objects
-    channel_list = channel_string.split("\n")
+    channel_list = channel_string.splitlines()
+
+
+def find_the_equal_sign(channel_list):
+    for channel in channel_list:
+        equal_place = channel.find("=")
+        return equal_place
+
