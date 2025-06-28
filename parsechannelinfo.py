@@ -1,11 +1,15 @@
+#parse the channel info to dict
 def parse(channel_string):
-# parse the channel info and return a list of Channels objects
+#parse the string to list line by line
   channel_list = channel_string.splitlines()
+#objects define
   equal_places = []
   channel_dict = {}
   i = 0
+#get from in each list itame th equel sign place
   for channel in channel_list:
      equal_places.append(channel.find("="))
+#convert from list to dict
   for info in channel_list:
      channel_number = info[0:equal_places[i]]
      channel_state = info[equal_places[i]+1:]
