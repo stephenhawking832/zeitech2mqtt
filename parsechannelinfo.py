@@ -1,5 +1,5 @@
 #parse the channel info to dict
-def parse(channel_string):
+def parse(channel_string: 'str'):
 #parse the string to list line by line
   channel_list = channel_string.splitlines()
 #objects define
